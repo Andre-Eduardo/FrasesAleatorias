@@ -9,6 +9,16 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Alert,TouchableOpacity,Button} from 'react-native';
 
+var frases = ["Qualquer tecnologia suficientemente avançada é equivalente à mágica",
+ "Computadores são inúteis. Eles conseguem apenas lhe dar respostas",
+  "Isso que é vida",
+"O amor não se vê com os olhos mas com o coração.",
+"A medida do amor é amar sem medida.",
+"O nome dela é Jeniffer",
+"Tenho em mim todos os sonhos do mundo.",
+"O mundo precisa de amor",
+"Mude o mundo",
+"Hoje é um lindo dia para salvar vidas"];
 
 
 type Props = {};
@@ -20,13 +30,14 @@ export default class App extends Component<Props> {
 
     alteraTexto(){
         var numeroAleatorio = Math.floor(Math.random() *10);
-        this.setState({texto:'Olá feiosa, seu numero da sorte é: '+ numeroAleatorio})
+
+        this.setState({texto:' '+frases[numeroAleatorio]})
     }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Número Do Dia</Text>
+        <Text style={styles.title}>Frases Aleatórias</Text>
 
         <Text style={styles.welcome}>{this.state.texto}</Text>
             <TouchableOpacity
